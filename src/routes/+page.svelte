@@ -33,7 +33,7 @@
             points: 1
         },
         {
-            icon: fetch_svg("color/unity"),
+            icon: fetch_svg("AAAAAA/unity"),
             label: "Unity",
             points: 2
         }
@@ -64,7 +64,7 @@
     let cards: Card[] = [
         {
             title: "Back To Sync",
-            description: `A game I developed with my friends over the week of "2022 UNC Collegiate Game Jam."`,
+            description: `A game I developed with my friends over the week of "2022 UNC Collegiate Game Jam."`, // This week-long voyage taught me how to collaborate and match deadlines, use 2D tiles, animate sprites, use state machines and operate player controllers.
             image: BACK_TO_SYNC,
             links: [
                 {
@@ -82,7 +82,8 @@
         }
     ]
 
-    
+    // TODO
+    // https://stackoverflow.com/questions/30143082/how-to-get-color-value-from-gradient-by-percentage-with-javascript
 </script>
 
 
@@ -106,7 +107,7 @@
             {#each stats as stat}
                 <div class="flex h-5 flex-grow justify-between">
                     <StatLabel outlined={true} icon={stat.icon} label={stat.label} />
-                    <div class="">{stat.points} PP</div>
+                    <div>{stat.points} PP</div> <!-- class="text-[rgb(1,1,1)]" -->
                 </div>
             {/each}
         </div>
@@ -124,6 +125,9 @@
     </article>
 
     <!-- Campaings (Companies/Experience) -->
+    <!-- Use Daisy UI "Timeline with icon snapped to the start" -->
+    <!-- https://daisyui.com/components/timeline/ -->
+    <!-- title: [Company Name] | [Position] -->
 
     <!-- Scrolls 📖 (Blog Posts) -->
 </main>
@@ -160,8 +164,9 @@
 
 <footer class="mx-auto px-5 py-10 md:px-0 md:w-1/2 prose font-mono">
     <div class="divider divider-start">Contacts 🦉</div>
-    <aside>
-        Need a hire or someone to clean your [Goblin] infestations? Send me an e-mail <SourceLink icon="https://img.icons8.com/mail-filled" href="mailto:maxim.peniaz@gmail.com" /> and I'll make sure to read it immediately after the owl delivers it. You can also find me on 
+    <!-- pulsar-line/48/FFFFFF/mail.png -->
+    <aside class="">
+        Need a hire or someone to clean a [Goblin] infestation? Send me an e-mail <SourceLink icon={fetch_svg("pulsar-line/48/mail.png")} href="mailto:maxim.peniaz@gmail.com" /> and I'll make sure to read it immediately after the owl delivers it. You can also find me on 
         <SourceLink icon={GITHUB_SVG} href="https://github.com/RIGIK93" />
         <SourceLink icon={LINKEDIN_SVG} href="https://www.linkedin.com/in/maxim-peniaz-1008a7237/"/>
         <SourceLink icon={fetch_svg("pulsar-gradient/48/itch-io.png")} href="https://rigik93.itch.io/"/>
