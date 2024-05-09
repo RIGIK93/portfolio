@@ -9,7 +9,6 @@
     import GITHUB_SVG from "$lib/assets/svg/github.svg"
     import LINKEDIN_SVG from "$lib/assets/svg/linkedin.svg"
     import BACK_TO_SYNC from "$lib/assets/back_to_sync.png"
-    // import GMAIL_SVG from "$lib/assets/svg/gmail.svg"
 
     // Using https://img.icons8.com/
     // Use color/icon_name to get colored icon
@@ -36,6 +35,31 @@
             icon: fetch_svg("AAAAAA/unity"),
             label: "Unity",
             points: 2
+        },
+        {
+            icon: fetch_svg("color/typescript"),
+            label: "TypeScript",
+            points: 3,
+        },
+        {
+            icon: fetch_svg("color/python"),
+            label: "Python",
+            points: 1
+        },
+        {
+            icon: fetch_svg("color/48/java-coffee-cup-logo--v1.png"),
+            label: "Java",
+            points: 1
+        },
+        {
+            icon: fetch_svg("nolan/64/godot.png"),
+            label: "Godot",
+            points: 0.5
+        },
+        {
+            icon: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg",
+            label: "Rust",
+            points: 1
         }
     ]
 
@@ -86,8 +110,17 @@
     // https://stackoverflow.com/questions/30143082/how-to-get-color-value-from-gradient-by-percentage-with-javascript
 </script>
 
+<svelte:head>
+    <title>Maxim's Fantasy Portfolio</title>
+    <meta name="description" content="Welcome to my fantasy portfolio, the place where I reveal the throny and buggy path of my tech adventure...">
 
-<main class="mx-auto px-5 py-10 md:px-0 md:w-1/2 prose font-mono">
+    <meta property="og:title" content="Maxim's Fantasy Portfolio">
+    <meta property="og:description" content="Hey! Check out my portfolio!"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://darklynx.org/og_cover.png"/>
+</svelte:head>
+
+<main class="mx-auto px-5 pt-10 md:px-0 md:w-1/2 prose font-mono">
 
     <Hero></Hero>
 
@@ -120,7 +153,7 @@
         <!-- 
             Note: Each Quest should list a proficiency and by how much it has boosted the specific proficiency
         -->
-        <div class="divider divider-start">Quests 📜 <Hint txt="Quests are projects [Maxim] contributed to. Quests boost PP (Project Points) of certain [Character Stats]. The stat and the number of PP contributed by a certain [Quest] is written bellow each [Quest]."/></div>
+        <div class="divider divider-start pt-5">Quests 📜 <Hint txt="Quests are projects [Maxim] contributed to. Quests boost PP (Project Points) of certain [Character Stats]. The stat and the number of PP contributed by a certain [Quest] is written bellow each [Quest]."/></div>
 
     </article>
 
@@ -132,7 +165,7 @@
     <!-- Scrolls 📖 (Blog Posts) -->
 </main>
 
-<div class="flex justify-center">
+<div class="flex justify-center py-3">
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
 
         {#each cards as card}
@@ -162,7 +195,7 @@
     </div>
 </div>
 
-<footer class="mx-auto px-5 py-10 md:px-0 md:w-1/2 prose font-mono">
+<footer class="mx-auto px-5 pt-5 pb-10 md:px-0 md:w-1/2 prose font-mono">
     <div class="divider divider-start">Contacts 🦉</div>
     <!-- pulsar-line/48/FFFFFF/mail.png -->
     <aside class="">
