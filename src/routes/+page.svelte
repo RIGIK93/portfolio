@@ -120,8 +120,18 @@
     <meta property="og:image" content="https://darklynx.org/og_cover.png"/>
 </svelte:head>
 
+
 <main class="mx-auto px-5 pt-10 md:px-0 md:w-1/2 prose font-mono">
 
+    <div role="tablist" class="mb-4 not-prose">
+        <a role="tab" class="btn btn-active no-animation btn-sm" href="#top">Board</a>
+        <div class="indicator">
+            <span class="indicator-item badge badge-secondary badge-sm">Soon!</span> 
+            <a role="tab" class="btn btn-disabled btn-sm" href="#top">Journal</a>
+        </div>
+    </div>
+
+   
     <Hero></Hero>
 
     <!-- <nav></nav> -->
@@ -139,7 +149,11 @@
         <div class="flex flex-col gap-2">
             {#each stats as stat}
                 <div class="flex h-5 flex-grow justify-between">
-                    <StatLabel outlined={true} icon={stat.icon} label={stat.label} />
+                    <StatLabel
+                        outlined={true}
+                        icon={stat.icon}
+                        label={stat.label}
+                    />
                     <div>{stat.points} PP</div> <!-- class="text-[rgb(1,1,1)]" -->
                 </div>
             {/each}
@@ -183,7 +197,12 @@
                 </div>
                 <div class="card-actions justify-end">
                     {#each card.stats as stat}
-                        <StatLabel outlined={true} icon={stat.icon} label={stat.points == 0 ? stat.label : `${stat.points >= 0 ? "+" : "-"}${stat.points}`}/>
+                        <StatLabel 
+                            outlined={true} 
+                            icon={stat.icon} 
+                            label={stat.points == 0 ? stat.label 
+                                                    : `${stat.points >= 0 ? "+" : "-"}${stat.points}`}
+                        />
                     {/each}
                     <!-- <StatLabel outlined={true} icon={fetch_svg("pulsar-gradient/48/itch-io.png")} label="+5" />
                     <StatLabel outlined={true} icon={CPP_SVG} label="+5" /> -->

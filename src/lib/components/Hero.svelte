@@ -89,7 +89,7 @@
         }
 
         const TICK = 1
-        const DISSIPATION_SPEED = 0.000314 / 9.8 // Oppacity / tick
+        const DISSIPATION_SPEED = 0.000314 / 8.2 // Oppacity / tick
         // The constant had to be updated because it seems that setInterval was updating slower that it supposed to
 
         let frame = NaN;
