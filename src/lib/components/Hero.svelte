@@ -42,7 +42,7 @@
         // const PADDING = 10
 
         // const canvas = document.getElementById("stars") as HTMLCanvasElement
-        const ctx = canvas.getContext("2d") as CanvasRenderingContext2D
+        const ctx = canvas.getContext("2d")!
 
         // window.addEventListener("resize", () => setup_canvas(document.getElementById("stars")! as HTMLCanvasElement, document.getElementById("header")!)) 
         setup_canvas(/*canvas, wrapper*/)

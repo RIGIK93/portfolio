@@ -4,6 +4,7 @@
     import StatLabel from "$lib/components/StatLabel.svelte";
     import SourceLink from "$lib/components/SourceLink.svelte";
     import Hero from "$lib/components/Hero.svelte"
+    import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
 
     import CPP_SVG from "$lib/assets/svg/cpp.svg"
     import GITHUB_SVG from "$lib/assets/svg/github.svg"
@@ -123,14 +124,18 @@
 
 <main class="mx-auto px-5 pt-10 md:px-0 md:w-1/2 prose font-mono">
 
-    <div role="tablist" class="mb-4 not-prose">
-        <a role="tab" class="btn btn-active no-animation btn-sm" href="#top">Board</a>
-        <div class="indicator">
-            <span class="indicator-item badge badge-secondary badge-sm">Soon!</span> 
-            <a role="tab" class="btn btn-disabled btn-sm" href="#top">Journal</a>
-        </div>
-    </div>
+    <div class="flex justify-between mb-4 not-prose">
 
+        <div role="tablist" class="">
+            <a role="tab" class="btn btn-active no-animation btn-sm" href="/">Board</a>
+            <div class="indicator">
+                <span class="indicator-item badge badge-secondary badge-sm">Soon!</span> 
+                <a role="tab" class="btn btn-disabled btn-sm" href="/">Journal</a>
+            </div>
+        </div>
+
+        <ThemeSwitcher themeOptions={["dark", "light"]}/>
+    </div>
    
     <Hero></Hero>
 
@@ -140,6 +145,19 @@
     <!-- Maxim welcomes yee who have stumbled upon thee portfolio! -->
 
     <!-- Character Description -->
+    <article class="container">
+        <div class="divider divider-start">Character Description ℹ️</div>
+        <p>
+            The path may be full of bugs and winding trails ending in countless dead ends, 
+            but who is going on an adventure expecting it to be easy? 
+            Challenge is the intrinsic part that makes the adventure interesting.
+        </p>
+        <p>
+            This adventure is also a magical one. 
+            “Any sufficiently advanced technology is indistinguishable from magic” — Athur C. Clarke.
+            I believe that programming is as close as we can get to magic in this world. It is simply magical to program something: an exciting, magical adventrue.
+        </p>
+    </article>
 
     <!-- Character Stats -->
 
