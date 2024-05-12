@@ -2,7 +2,7 @@
 <script lang="ts">
     import Hint from "$lib/components/Hint.svelte";
     import StatLabel from "$lib/components/StatLabel.svelte";
-    import SourceLink from "$lib/components/SourceLink.svelte";
+    import IconButton from "$lib/components/IconButton.svelte";
     import Hero from "$lib/components/Hero.svelte"
     import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
 
@@ -73,7 +73,7 @@
         return stat
     }
 
-    interface ResourceLink {
+    interface ReIconButton {
         icon: string,
         href: string
     }
@@ -82,7 +82,7 @@
         image: string
         title: string
         description: string
-        links: ResourceLink[]
+        links: ReIconButton[]
         stats: Stat[]
     }
 
@@ -155,7 +155,8 @@
         <p>
             This adventure is also a magical one. 
             “Any sufficiently advanced technology is indistinguishable from magic” — Athur C. Clarke.
-            I believe that programming is as close as we can get to magic in this world. It is simply magical to program something: an exciting, magical adventrue.
+            I believe that programming is as close as we can get to magic in this world. 
+            It is simply magical to program something: an exciting, magical adventure.
         </p>
     </article>
 
@@ -202,7 +203,7 @@
 
         {#each cards as card}
             <div class="card col-span-1 mx-5 sm:mx-0 sm:w-60 card-compact bg-base-100 shadow-xl font-mono">
-                <figure><img src={card.image} alt={`${card.title} Cover Image`} /></figure>
+                <figure><a href={card.links[0].href}><img class="img-btn" src={card.image} alt={`${card.title} Cover Image`} /></a></figure>
                 <div class="card-body">
                 <h2 class="card-title">
                     {card.title}
@@ -210,7 +211,7 @@
                 <p>{card.description}</p>
                 <div class="card-actions justify-start">
                     {#each card.links as link}
-                        <SourceLink icon={link.icon} href={link.href} />
+                        <IconButton icon={link.icon} href={link.href} />
                     {/each}
                 </div>
                 <div class="card-actions justify-end">
@@ -236,10 +237,10 @@
     <div class="divider divider-start">Contacts 🦉</div>
     <!-- pulsar-line/48/FFFFFF/mail.png -->
     <aside class="">
-        Need a hire or someone to clean a [Goblin] infestation? Send me an e-mail <SourceLink icon={fetch_svg("pulsar-line/48/mail.png")} href="mailto:maxim.peniaz@gmail.com" /> and I'll make sure to read it immediately after the owl delivers it. You can also find me on 
-        <SourceLink icon={GITHUB_SVG} href="https://github.com/RIGIK93" />
-        <SourceLink icon={LINKEDIN_SVG} href="https://www.linkedin.com/in/maxim-peniaz-1008a7237/"/>
-        <SourceLink icon={fetch_svg("pulsar-gradient/48/itch-io.png")} href="https://rigik93.itch.io/"/>
+        Need a hire or someone to clean a [Goblin] infestation? Send me an e-mail <IconButton icon={fetch_svg("pulsar-line/48/mail.png")} href="mailto:maxim.peniaz@gmail.com" /> and I'll make sure to read it immediately after the owl delivers it. You can also find me on 
+        <IconButton icon={GITHUB_SVG} href="https://github.com/RIGIK93" />
+        <IconButton icon={LINKEDIN_SVG} href="https://www.linkedin.com/in/maxim-peniaz-1008a7237/"/>
+        <IconButton icon={fetch_svg("pulsar-gradient/48/itch-io.png")} href="https://rigik93.itch.io/"/>
         .
     </aside>
     <!-- Need help clearing orc infestations or you're just interested in hiring me? Just send me an email, will ya'? -->
@@ -252,7 +253,10 @@
 </footer>
 
 <style>
-    /* header {
-        background: url("#stars")
-    } */
+    /* @media(hover:hover) { */
+        .img-btn:hover {
+            /* background-color: var(--fallback-b3,oklch(var(--b3)/var(--tw-bg-opacity))); */
+            opacity: 0.7;
+        }
+    /* } */
 </style>
