@@ -4,12 +4,14 @@
     import StatLabel from "$lib/components/StatLabel.svelte";
     import IconButton from "$lib/components/IconButton.svelte";
     import Hero from "$lib/components/Hero.svelte"
-    import ThemeSwitcher from "$lib/components/ThemeSwitcher.svelte";
+    import Header from "$lib/components/Header.svelte";
+    import Footer from "$lib/components/Footer.svelte";
 
     import CPP_SVG from "$lib/assets/svg/cpp.svg"
     import GITHUB_SVG from "$lib/assets/svg/github.svg"
     import LINKEDIN_SVG from "$lib/assets/svg/linkedin.svg"
-    import BACK_TO_SYNC from "$lib/assets/back_to_sync.png"
+    import BACK_TO_SYNC from "$lib/assets/back_to_sync.avif"
+    import AMPHIBIAN_WORLD from "$lib/assets/amphibian_world.png"
 
     // Using https://img.icons8.com/
     // Use color/icon_name to get colored icon
@@ -40,7 +42,7 @@
         {
             icon: fetch_svg("color/typescript"),
             label: "TypeScript",
-            points: 3,
+            points: 4,
         },
         {
             icon: fetch_svg("color/python"),
@@ -104,6 +106,20 @@
                     points: 1,
                 }
             ]
+        },
+        {
+            title: "Amphibian World",
+            description: "Interactive website about amphibians, developed for my biology class.",
+            image: AMPHIBIAN_WORLD,
+            links: [{
+                icon: fetch_svg('internet'),
+                href: "https://amphibia.darklynx.org/"
+            }],
+            stats: [{
+                icon: get_stat('TypeScript').icon,
+                label: "TypeScript",
+                points: 1,
+            }]
         }
     ]
 
@@ -113,7 +129,7 @@
 
 <svelte:head>
     <title>Maxim's Fantasy Portfolio</title>
-    <meta name="description" content="Welcome to my fantasy portfolio, the place where I reveal the throny and buggy path of my tech adventure...">
+    <meta name="description" content="Welcome to my fantasy portfolio, the place where I reveal the thorny and buggy path of my tech adventure...">
 
     <meta property="og:title" content="Maxim's Fantasy Portfolio">
     <meta property="og:description" content="Hey! Check out my portfolio!"/>
@@ -124,18 +140,7 @@
 
 <main class="mx-auto px-5 pt-10 md:px-0 md:w-1/2 prose font-mono">
 
-    <div class="flex justify-between mb-4 not-prose">
-
-        <div role="tablist" class="">
-            <a role="tab" class="btn btn-active no-animation btn-sm" href="/">Board</a>
-            <div class="indicator">
-                <span class="indicator-item badge badge-secondary badge-sm">Soon!</span> 
-                <a role="tab" class="btn btn-disabled btn-sm" href="/">Journal</a>
-            </div>
-        </div>
-
-        <ThemeSwitcher themeOptions={["dark", "light"]}/>
-    </div>
+    <Header></Header>
    
     <Hero></Hero>
 
@@ -246,11 +251,7 @@
     <!-- Need help clearing orc infestations or you're just interested in hiring me? Just send me an email, will ya'? -->
 </footer>
 
-<footer class="footer footer-center p-4 bg-base-300 text-base-content">
-    <aside>
-      <p>MIT License. Copyright © 2024 Maxim Peniaz. <a href="https://github.com/RIGIK93/portfolio" class="link">Portfolio's Repository</a>. Icons by <a class="link" href="https://icons8.com">icons8</a>.</p>
-    </aside>
-</footer>
+<Footer />
 
 <style>
     /* @media(hover:hover) { */
