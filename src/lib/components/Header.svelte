@@ -6,10 +6,7 @@
 
     <div role="tablist" class="">
         <a role="tab" class="btn btn-active no-animation btn-sm" href="/">Board</a>
-        <div class="indicator">
-            <span class="indicator-item badge badge-secondary badge-sm">Soon!</span> 
-            <a role="tab" class="btn btn-disabled btn-sm" href="/">Journal</a>
-        </div>
+        <a role="tab" class="btn btn-sm" href="https://blog.darklynx.org">Journal</a>
     </div>
 
     <ThemeSwitcher themeOptions={["dark", "light"]}/>
